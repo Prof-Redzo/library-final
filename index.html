@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+  <title>Library Website</title>
+</head>
+<body>
+  
+  <header>
+    <div class="logo">
+      <a href="">My Library</a>
+    </div>
+    <nav>  
+      <button>Home</button>
+      <button>Books</button>
+      <button>Users</button>
+      <button>Contact</button>  
+    </nav>
+    <div class="search">
+      <input type="text" id="searchInput" placeholder="Search...">
+      <button type="submit" id="searchButton">Go</button>
+      <span onclick="newElement()" class="addBtn">Add User</span>
+    </div>
+  </header>
+  <div class="container">
+    <div class="userList">
+    <h1>List of users</h1>
+    <ul id="users">
+        <li>Alan</li>
+        <li>Oscar</li>
+        <li>Mike</li>
+        <li>John</li>
+        <li>Dylan</li>
+        <li>Thomas</li>
+        <li>Andy</li>
+        <li>Ella</li>
+    </ul>
+  </div>
+    <div class="bookList">
+      <h1>List of books</h1>
+      <ul id="allBooks">
+          <li>Rouge et noir</li>
+          <li>Crime and Punishment</li>
+          <li>The Trial</li>
+          <li>The Fortress</li>
+          <li>Dervish and death</li>
+          <li>Waiting for Godot</li>
+          <li>Robinson Crusoe</li>
+          <li>Ruler</li>
+      </ul>
+    </div>
+  </div>
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Welcome to my Library</h1>
+      <p>Find your favorite book for today</p>
+    </div>
+    <div class="main-content">
+      <h2>Recommended Books</h2>
+      <div class="books">
+        <div class="book">
+          <img src="crveno_i_crno.jpg">
+          <h3>Rouge et noir</h3>
+          <p>Stendahl</p>
+        </div>
+        <div class="book">
+          <img src="zlocin_i_kazna.jpg">
+          <h3>Crime and Punishment</h3>
+          <p>Dostojevski</p> 
+        </div>
+          <div class="book">
+            <img src="proces_kafka.jpg">
+            <h3>The Trial</h3>
+            <p>Kafka</p>
+          </div>
+      </div>
+      <a href="" class="btn">View All Books</a>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2024 My Library. All rights reserved.</p>
+  </footer>
+</body>
+</html>
