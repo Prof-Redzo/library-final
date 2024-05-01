@@ -12,6 +12,10 @@ const searchUsers = () => {
   });
 }
 
+// Adding event listener to search button
+document.getElementById('searchButton').addEventListener('click', searchUsers);
+
+
 // Adding close button to each list item
 document.querySelectorAll("LI").forEach(item => {
   let span = document.createElement("SPAN");
