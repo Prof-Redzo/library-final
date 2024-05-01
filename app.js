@@ -1,51 +1,46 @@
-function search_users() {
-  let input = document.getElementById('searchInput').value
-  input = input.toLowerCase();
-  let x = document.getElementsByClassName('userList');
- 
-  for (i = 0; i < x.length; i++) {
-    if (!x[i].innerHTML.toLowerCase().includes(input)) {
-      x[i].style.display = "none";
+// Function to search users
+const searchUsers = () => {
+  let input = document.getElementById('searchInput').value.toLowerCase();
+  let x = document.querySelectorAll('.userList');
+
+  x.forEach(item => {
+    if (!item.innerHTML.toLowerCase().includes(input)) {
+      item.style.display = "none";
+    } else {
+      item.style.display = "list-item";
     }
-    else {
-      x[i].style.display = "list-item";
-    }
-  }
+  });
 }
-// Create a "close" button and append it to each list item
-var myNodelist = document.getElementsByTagName("LI");
-var i;
-for (i = 0; i < myNodelist.length; i++) {
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
+
+// Adding close button to each list item
+document.querySelectorAll("LI").forEach(item => {
+  let span = document.createElement("SPAN");
+  let txt = document.createTextNode("\u00D7");
   span.className = "close";
   span.appendChild(txt);
-  myNodelist[i].appendChild(span);
-}
+  item.appendChild(span);
+});
 
 // Click on a close button to hide the current list item
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
+document.querySelectorAll(".close").forEach(item => {
+  item.addEventListener("click", function() {
+    let div = this.parentElement;
     div.style.display = "none";
-  }
-}
+  });
+});
 
 // Add a "checked" symbol when clicking on a list item
-var list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
+document.querySelector('ul').addEventListener('click', (ev) => {
   if (ev.target.tagName === 'LI') {
     ev.target.classList.toggle('checked');
   }
 }, false);
 
 // Create a new list item when clicking on the "Add" button
-function newElement() {
-  var li = document.createElement("li");
-  var inputValue = document.getElementById("myInput").value;
-  var t = document.createTextNode(inputValue);
+const newElement = () => {
+  let li = document.createElement("li");
+  let inputValue = document.getElementById("myInput").value;
+  let t = document.createTextNode(inputValue);
   li.appendChild(t);
   if (inputValue === '') {
     alert("You must write something!");
@@ -54,16 +49,15 @@ function newElement() {
   }
   document.getElementById("myInput").value = "";
 
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
+  let span = document.createElement("SPAN");
+  let txt = document.createTextNode("\u00D7");
   span.className = "close";
   span.appendChild(txt);
   li.appendChild(span);
 
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      var div = this.parentElement;
-      div.style.display = "none";
-    }
-  }
+  // Click on a close button to hide the current list item for dynamically added items
+  span.addEventListener("click", function() {
+    let div = this.parentElement;
+    div.style.display = "none";
+  });
 }
